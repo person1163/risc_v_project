@@ -1,0 +1,21 @@
+module control_unit(
+input[6:0] opcode,
+output reg[1:0] alu_op,
+output reg alu_src, mem_reg, reg_write, mem_read, mem_write, branch);
+
+always @(*)
+begin
+case(opcode)
+	7b'0110011: //R-type instructions
+	begin
+		alu_src = 1'b0;
+		mem_reg = 1'b0;
+		reg_write = 1'b1;
+		mem_read= 1'b0;
+		mem_write = 1'b0;
+		alu_op = 2'b10;
+	end
+end
+	
+	
+	
