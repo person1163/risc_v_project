@@ -1,0 +1,4 @@
+timescale 1us/1ns
+module risc_v_project();
+test_bench_alu alu1();
+endmodule

@@ -1,0 +1,26 @@
+module test_bench_cu()
+reg[6:0] test_opcode = 7b'0110011;
+reg alu_src, mem_reg, reg_write, mem_read, mem_write, branch;
+reg[1:0] alu_op;
+control_unit cu_dut(.opcode(test_opcode), .alu_src(alu_sc), .mem_reg(mem_reg),
+.reg_write(reg_write), .mem_read(mem_read), .mem_write(mem_write), .branch(branch), .alu_op(alu_op));
+$display("test_opcode = %b", test_opcode);
+$display("alu_src = %b", alu_src);
+$display("mem_reg = %b", mem_reg);
+$display("reg_write = %b", reg_write);
+$display("mem_read = %b", mem_read);
+$display("mem_write = %b", mem_write);
+$display("branch = %b", branch);
+endmodule
+
+module test_bench_alu()
+reg[3:0] test_instruction_bits = 4'b0000
+reg[3:0] alu_opcodes;
+reg[15:0] a = 2'b01;
+reg[15:0] b = 2'b10;
+reg[15:0] result;
+alu_control alu_control_dut(.instruction_bits(test_instruction_bits), .alu_opcodes(alu_opcodes));
+$display("alu_opcodes = %b", alu_opcodes);
+alu alu_dut(.a(a), .b(b), .alu_opcodes(alu_opcodes), .result(result));
+$display("result = %b", result);
+endmodule

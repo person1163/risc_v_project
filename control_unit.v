@@ -13,6 +13,7 @@ case(opcode)
 		reg_write = 1'b1;
 		mem_read= 1'b0;
 		mem_write = 1'b0;
+		branch = 1'b0;
 		alu_op = 2'b10;
 	end
 end
