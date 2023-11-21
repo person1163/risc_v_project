@@ -1,3 +1,4 @@
+
 module test_bench_cu();
 reg[6:0] test_opcode;
 reg alu_src, mem_reg, reg_write, mem_read, mem_write, branch;

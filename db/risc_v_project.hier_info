@@ -1,4 +1,5 @@
 |risc_v_project
+clk => ~NO_FANOUT~
 
 
 |risc_v_project|alu_control:alu_control_dut
