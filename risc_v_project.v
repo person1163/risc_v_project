@@ -1,15 +1,13 @@
 module risc_v_project(input clk);
-reg[3:0] test_instruction_bits;
-wire[3:0] alu_opcodes;
-reg[15:0] a;
-reg[15:0] b;
-wire[15:0] result;
+reg[4:0] rr1, rr2, wr;
+reg[63:0] write_data;
+reg write_enable;
+wire[63:0] rd1, rd2;
 reg [22:0] cnt;
-alu_control alu_control_dut(.instruction_bits(test_instruction_bits), .alu_opcodes(alu_opcodes));
-alu alu_dut(.a(a), .b(b), .alu_opcodes(alu_opcodes), .result(result));
+register_files rf_dut(.clk(clk), .read_register_1(rr1), .read_register_2(rr2), .write_register(wr), .write_data(write_data), .write_en(write_enable), .read_data_1(rd1), .read_data_2(rd2));
 initial
 	begin
-		 a = 2'b01; b = 2'b10; test_instruction_bits = 4'b0000;//add
+		 rr1 = 5'd10; rr2 = 5'd20; wr = 5'd20; write_data = 64'd15; write_enable = 1'b1;
 		 cnt <= 32'h00000000;
 	end
 always @ (posedge clk) begin
