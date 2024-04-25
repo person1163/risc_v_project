@@ -11,7 +11,7 @@ reg[63:0] reg_array[31:0];//array width 64 bits and length 32
 integer i;
  initial begin
   for(i=0;i<32;i=i+1)
-   reg_array[i] <= i;
+   reg_array[i] <= 0;
  end
   always @ (posedge clk ) begin
    if(write_en) begin

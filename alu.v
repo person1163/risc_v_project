@@ -1,8 +1,8 @@
 module alu(
-  input [15:0] a,
-  input [15:0] b,
+  input [63:0] a,
+  input [63:0] b,
   input [3:0] alu_opcodes,
-  output reg [15:0] result
+  output reg [63:0] result
 );
 
 always @(*)
